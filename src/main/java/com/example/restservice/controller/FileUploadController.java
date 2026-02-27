@@ -32,8 +32,8 @@ public class FileUploadController {
         String filename = file.getOriginalFilename();
 
         // Get the contents of the file itself.
-        File tempFile = File.createTempFile("upload-", ".pdf");
-        PDDocument document = Loader.loadPDF(tempFile);
+        byte[] fileBytes = file.getInputStream().readAllBytes();
+        PDDocument document = Loader.loadPDF(fileBytes);
         PDFTextStripper stripper = new PDFTextStripper();
         String text = stripper.getText(document);
         document.close();
