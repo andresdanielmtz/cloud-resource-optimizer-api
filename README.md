@@ -7,5 +7,11 @@ How to run the project:
 3. Run the following command to build and start the application:
 
 ```bash
-./mvnw spring-boot:run
+./gradlew bootRun
+```
+
+To run the project, use:
+
+```bash
+./gradlew build
 ```
