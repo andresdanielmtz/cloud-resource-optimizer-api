@@ -1,7 +1,24 @@
 package com.example.restservice.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
- * Abstract interface representing a cloud provider. This can be implemented by specific cloud providers like AWS, Azure, GCP, etc.
+ * Abstract class representing a generic cloud provider.
  */
-public interface CloudProvider {
+public abstract class CloudProvider {
+    /**
+     * Common properties and methods for all cloud providers can be defined here, such as API keys, authentication methods, etc.
+     */
+    @Getter
+    @Setter
+    String apiKey = "";
+
+    /**
+     * Constructor for CloudProvider, which takes an API key as a parameter and initializes the apiKey property.
+     * @param apiKey The API key for authenticating with the cloud provider's services.
+     */
+    public CloudProvider(String apiKey) {
+        this.apiKey = apiKey;
+    }
 }
